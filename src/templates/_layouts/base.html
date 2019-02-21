@@ -1,0 +1,181 @@
+{#
+ # Layout template
+ # ---------------
+ #
+ # This template defines your site’s global layout. It can be
+ # “extended” by other templates to fill in the gaps.
+ #
+ # See Twig’s Template Inheritance documentation for more details:
+ # http://twig.sensiolabs.org/doc/templates.html#template-inheritance
+ #}
+
+{% set baseUrl = craft.config.environmentVariables.baseUrl ?? siteUrl %}
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-GB">
+    <head>
+    	<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="coverage" content="Worldwide">
+        <meta name="format-detection" content="telephone=no">
+    	<title>Presland</title>
+        <link rel="home" href="{{ siteUrl }}">
+        <link rel='stylesheet prefetch' href='https://cdn.rawgit.com/michalsnik/aos/2.0.4/dist/aos.css'>
+        <link href="{{ baseUrl }}assets/css/app.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500,700" rel="stylesheet"> 
+        
+    </head>
+    
+    <body>
+        {% import "./_partials/_macros.html" as macros %}
+
+        {% set home = [
+            siteUrl
+        ] %}
+
+        {% set darkBg = [
+            craft.entries.id(22).first().url()
+           
+        ] %}
+
+        {% set about = [
+            craft.entries.id(15).first().url()
+           
+        ] %}
+
+
+        
+        {% if craft.request.getUrl() in home %}
+            <header class="header">
+        {% elseif craft.request.getUrl() in darkBg %}
+            <header class="header  header--light">
+        {% else %}
+            <header class="header  header--dark">
+        {% endif %}
+
+        
+            <div class="grid-container  hide-for-small-only">
+                <div class="grid-x  grid-padding-x  align-middle  align-justify  header__bg">
+                    <div class="cell  auto  medium-shrink">
+                        <a href="{{ siteUrl }}">
+                            <img class="header__logo" src="assets/img/presland-icon.png" alt="Presland Plumbing">
+                        </a>
+                    </div>
+                    <nav class="cell  medium-auto">
+                        <ul class="menu  align-center">
+                            <li><a class="header__li  {{ macros.is_active('') }}" href="{{ siteUrl }}">Home</a></li>
+                            <li><a class="header__li  {{ macros.is_active('services') }}" href="{{ url('services') }}">Services</a></li>
+                            <li><a class="header__li  {{ macros.is_active('rates') }}" href="{{ url('rates') }}">Rates</a></li>
+                            <li><a class="header__li  {{ macros.is_active('about') }}" href="{{ url('about') }}">About & Reviews</a></li>
+                            <li><a class="header__li  {{ macros.is_active('contact') }}" href="{{ url('contact') }}">Contact</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <div class="cell  shrink">
+                        <button class="button  button__outline"  data-open="getQuote">Get a quote</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-container full  show-for-small-only">
+                <div class="grid-x  align-middle  align-justify  header__m">
+                    <div class="cell  shrink">
+                        <a href="{{ siteUrl }}">
+                            <img class="header__logo  header__logo--m" src="assets/img/presland-icon.png" alt="Presland Plumbing">
+                        </a>
+                    </div>
+
+                    <div class="cell  shrink">
+                        <div class="hamburger" id="hamburger"  data-toggle="offCanvasTop1">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cell">
+                <div class="off-canvas-wrapper">
+
+                    <div class="off-canvas  position-top" id="offCanvasTop1" data-off-canvas>
+                        <nav>
+                            <ul class="vertical  menu  menu--mobile">
+                                <li><a class="header__li  header__li--mobile  {{ macros.is_active('') }}" href="{{ siteUrl }}">Home</a></li>
+                                <li><a class="header__li  header__li--mobile  {{ macros.is_active('services') }}" href="{{ url('services') }}">Services</a></li>
+                                <li><a class="header__li  header__li--mobile  {{ macros.is_active('rates') }}" href="{{ url('rates') }}">Rates</a></li>
+                                <li><a class="header__li  header__li--mobile  {{ macros.is_active('about') }}" href="{{ url('about') }}">About & Reviews</a></li>
+                                <li><a class="header__li  header__li--mobile  {{ macros.is_active('contact') }}" href="{{ url('contact') }}">Contact</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                </div>
+            </div>
+
+        </header>
+        
+
+        <main role="main" class="app-main">
+            {% block content %}
+                <p>If you see me, you haven’t set your <code>{% verbatim %}{% block content %}…{% endblock %}{% endverbatim %}</code> yet.</p>
+                <p>See Twig’s <a href="http://twig.sensiolabs.org/doc/templates.html#template-inheritance">Template Inheritance</a> documentation for an explanation.</p>
+            {% endblock %}
+        </main>
+
+        <footer class="footer">
+            <a href="tel:{{ contactDetails.phoneNumber }}"><button class="button  button--phone  show-for-small-only"><img class="home-about__image" src="assets/img/phone.png"></button></a>
+            <div class="grid-container">
+                <div class="grid-x  grid-padding-x ">
+                    <div class="cell  medium-3">
+                        <img class="home__logo" src="assets/img/presland-logo-white.png">
+                    </div>
+                    <div class="cell  medium-5">
+                        <p>
+                            Contact us to get free quick and easy quote<br>
+                            Call <a class="bold" href="tel:{{ contactDetails.phoneNumber }}">{{ contactDetails.phoneNumber }}</a><br>
+                            Email <a class="bold"  href="mailto:{{ contactDetails.emailAddress }}">{{ contactDetails.emailAddress }}</a>
+                        </p>
+                    </div>
+                    <!-- <div class="cell  medium-2">
+                        <p>
+                            About<br>
+                            Contact<br>
+                            Reviews
+                        </p>
+                    </div>
+                    <div class="cell  medium-2">
+                        <p>
+                            Privacy Policy
+                        </p>
+                    </div> -->
+                    <div class="cell  small-12">
+                        <p>
+                            © Presland Plumbing 2019
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+        <div class="reveal" id="getQuote" data-reveal>
+            <h1 class="bold">Get a free quote</h1>
+            <hr class="hr  hr--orange">
+            <p>To request your free quote please fill in the form or contact us on 07835 020316 or email info@preslandservices.com</p>
+            {{ craft.sproutForms.displayForm('homeForm') }}
+            
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ craft.simpleMap.apiKey }}&callback=initMap" async defer></script>
+        
+        {% includeJsFile baseUrl ~ 'assets/js/app.js' %}
+
+    </body>
+
+</html>

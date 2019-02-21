@@ -1,0 +1,38 @@
+.hamburger {
+    z-index: 100;
+    position: relative;
+}
+
+.hamburger .line {
+    width: 33px;
+    height: 3px;
+    background-color: white;
+    display: block;
+    margin: 8px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    z-index: 100;
+    border-radius: 0.1rem;
+  }
+  
+  .hamburger:hover{
+    cursor: pointer;
+  }
+
+
+  #hamburger.is-active .line:nth-child(2){
+    opacity: 0;
+  }
+
+  #hamburger.is-active .line:nth-child(1), #hamburger.is-active .line:nth-child(3){
+    background-color: white;
+  }
+  
+  #hamburger.is-active .line:nth-child(1){
+    transform: translateY(10px) rotate(45deg);
+  }
+  
+  #hamburger.is-active .line:nth-child(3){
+    transform: translateY(-12px) rotate(-45deg);
+  }

@@ -1,0 +1,36 @@
+.rates {
+
+    &__table {
+        margin-bottom: 5rem;
+        &--bottom {
+            margin-bottom: 6rem;
+        }
+    }
+
+    &__tbody {
+        background: none;
+        border: none;
+    }
+
+    &__tr {
+        background: none;
+        padding: 0.5rem 0;
+        @include breakpoint(medium) {
+            padding: 0;
+        }
+        &:nth-child(2n) {
+            background: $off-white;
+        }
+    }
+
+    &__td {
+        font-size: 1.25rem;
+        @include breakpoint(medium) {
+            font-size: 1.75rem;
+        }
+    }
+
+    &__small {
+        font-size: 1rem;
+    }
+}

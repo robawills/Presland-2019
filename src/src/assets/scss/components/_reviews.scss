@@ -1,0 +1,59 @@
+.reviews {
+
+    
+    @include breakpoint(medium) {
+        &__hr {
+            border-right: 0.2rem solid white;
+        }
+    }
+
+    &__h1 {
+        font-size: 2.5rem;
+        @include breakpoint(medium) {
+            font-size: 3.25rem;
+        }
+    }
+
+    &__h2 {
+        font-size: 1.25rem;
+        @include breakpoint(medium) {
+            font-size: 1rem;
+        }
+    }
+
+    &__container {
+        margin-top: 1.5rem;
+    }
+
+
+    &__review {
+
+        &:nth-child(1) {
+            .reviews__space {
+                display: none;
+            }
+        }
+
+        @include breakpoint(medium) {
+            &:nth-child(1), &:nth-child(2) {
+                .reviews__space {
+                    display: none;
+                }
+            }
+        }
+         
+    }
+
+    &__title {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        @include breakpoint(medium) {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__space {
+        margin: 3rem 0;
+    }
+}

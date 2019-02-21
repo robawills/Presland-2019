@@ -1,0 +1,41 @@
+/*----------------------------------------------------------------------------*\
+    #SPACING HELPERS
+\*----------------------------------------------------------------------------*/
+
+
+.grid-container {
+    padding: 0 2.5rem;
+}
+
+.padding-wrap {
+    padding: 2.5rem 0;
+}
+
+@include breakpoint(medium) {
+
+    .grid-container {
+        padding: 0 3rem;
+    }
+
+    .padding-wrap {
+        padding: 3.5rem 0;
+    }
+}
+
+@include breakpoint(large) {
+
+    .grid-container {
+        padding: 0 5rem;
+    }
+
+    .padding-wrap {
+        padding: 4.5rem 0;
+    }
+}
+
+
+
+
+
+
+

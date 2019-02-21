@@ -1,0 +1,14 @@
+.home-trust {
+    margin: 3rem 0 3.5rem;
+
+    @include breakpoint(medium) {
+        margin: 5rem 0 6.5rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        @include breakpoint(medium) {
+            font-size: 2.5rem;
+        }
+    }
+}

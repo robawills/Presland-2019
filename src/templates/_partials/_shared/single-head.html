@@ -1,0 +1,33 @@
+
+<section class="single-header">
+    <div class="grid-container">
+        <div class="grid-x  grid-padding-x">
+            <div class="cell  small-12  large-10">
+                {% if craft.request.getUrl() in darkBg %}
+                    <h1 class="bold  white">
+                {% else %}
+                    <h1 class="bold">
+                {% endif %}
+                    {{ entry.title }}
+                </h1>
+
+                {% if craft.request.getUrl() in darkBg %}
+                    <hr class="hr">
+                {% else %}
+                    <hr class="hr  hr--gray">
+                {% endif %}
+                
+
+                {% if craft.request.getUrl() in darkBg %}
+                    <p class="single-header__p  white" >
+                {% else %}
+                    <p class="single-header__p">
+                {% endif %}
+                    {{ entry.intro }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+

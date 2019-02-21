@@ -1,0 +1,12 @@
+{% if entry.reviews|length %}  
+    <div class="grid-x  grid-padding-x  padding-wrap  reviews__container">
+        {% for review in entry.reviews %}
+        <div class="cell  small-12  medium-6  reviews__review">
+            <hr class="reviews__space">
+            <h2 class="reviews__title  bold">{{ review.reviewTitle }}</h2>
+            <p>“{{ review.reviewCopy }}”</p>
+            <h3 class="bold">{{ review.reviewScore }}</h3>
+        </div>
+        {% endfor %}
+    </div>
+{% endif %}

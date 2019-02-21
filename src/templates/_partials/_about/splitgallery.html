@@ -1,0 +1,56 @@
+{% if entry.gallery|length %}
+
+<section class="about">
+    <div class="grid-container">
+        <div class="grid-x  grid-padding-x  align-middle  bg-white">
+
+            <div class="cell  medium-6  orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+                <div class="orbit-wrapper">
+                    <div class="slider__controls">
+                        <button class="orbit-previous  bold"><</button>
+                        <button class="orbit-next  bold">></button>
+                    </div>
+
+                    <ul class="orbit-container  slider__container"> 
+                        {% for asset in entry.gallery %}                                 
+                            <li class="orbit-slide  slider__img"  style="background: url('{{ asset.url }}') no-repeat center center; background-size: cover;">
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>    
+            </div>
+
+            <div class="cell  medium-6">
+                <div class="grid-x  align-middle  about__wrap">
+
+                    <div class="cell  small-12  medium-6">
+                        <h2 class="bold  about__item  about__title">People & work you can trust</h2>
+                    </div>
+
+                    <div class="cell  small-6  text-center">
+                        <img class="about__item" src="assets/img/gas-safe.jpg">
+                    </div>
+                    
+                    <div class="cell  small-6  text-center">
+                        <img class="about__item" src="assets/img/rate-people.jpg">
+                    </div>
+
+                    <div class="cell  small-6  text-center">
+                        <img class="about__item" src="assets/img/checkatrader.jpg">
+                    </div>
+
+                    <div class="cell  small-6  text-center">
+                        <img class="about__item" src="assets/img/anglianwater.jpg">
+                    </div>
+
+                    <div class="cell  small-6  text-center">
+                        <img class="about__item" src="assets/img/advance.jpg">
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+</section>
+
+{% endif %}

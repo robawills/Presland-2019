@@ -1,0 +1,22 @@
+<section class="home-contact">
+    <div class="grid-container">
+        <div class="grid-x  grid-padding-x  home-contact__bg">
+            <div class="cell  medium-6">
+                
+                <h2 class="home-contact__title  bold">Get a free quote</h2>
+
+                {{ craft.sproutForms.displayForm('homeForm') }}
+
+                <p class="home-contact__details">
+                    Call <a class="home-contact__link  bold" href="tel:{{ contactDetails.phoneNumber }}">{{ contactDetails.phoneNumber }}</a><br>
+                    Email <a class="home-contact__link  bold" href="mailto:{{ contactDetails.emailAddress }}">{{ contactDetails.emailAddress }}</a>
+                </p>
+                
+            </div>
+            <div id="map" class="cell  medium-6  js-map  home-contact__map">
+
+            </div>
+        </div>
+    </div>
+</section>
+

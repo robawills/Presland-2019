@@ -1,0 +1,12 @@
+.hr {
+    width: 3rem;
+    border-bottom: 5px solid white;
+    margin: 1.5rem 0;
+
+    &--gray {
+        border-bottom: 5px solid $dark-gray;
+    }
+    &--orange {
+        border-bottom: 5px solid $orange;
+    }
+}

@@ -1,0 +1,93 @@
+{#
+ # Contact template
+ # ---------------
+ #
+ #}
+
+ {% extends "_layouts/base" %}
+
+ {% block content %}
+
+
+<div class="bg-darkgray">
+
+    {% include '_partials/_shared/single-head' %}
+
+    <section class="contact">
+        <div class="grid-container  contact">
+            <div class="grid-x  grid-padding-x  bg-white  align-stretch  align-middle">
+
+                <div class="cell  medium-6  padding-wrap">
+                    <h5>
+                        To request a free quote please fill in the form or contact us on <a class="bold" href="tel:{{ contactDetails.phoneNumber }}">{{ contactDetails.phoneNumber }}</a> or email <a class="bold"  href="mailto:{{ contactDetails.emailAddress }}">{{ contactDetails.emailAddress }}</a>
+                    </h5>
+                    {{ entry.contactText }}
+                </div>
+                
+
+                <div class="cell  medium-6  bg-blue  padding-wrap">
+
+                    {{ craft.sproutForms.displayForm('homeForm') }}
+                    
+                </div>
+            
+            </div>
+        </div>
+    </section>
+ 
+</div>
+
+
+<section class="grid-container  contact">
+    
+    <div class="grid-x  grid-padding-x">
+        <div id="map" class="cell  small-12  js-map  contact__map">
+           
+        </div>
+    </div>
+
+</section>
+
+<script>
+    var map;
+    function initMap() {
+        // Display the map
+        map = new google.maps.Map(document.getElementById("map"), {
+        center: {
+            lat: {{ entry.contactMap.lat }},
+            lng: {{ entry.contactMap.lng }}
+        },
+        zoom: {{ entry.contactMap.zoom }},
+        disableDefaultUI: true,
+        scrollwheel: false,
+        navigationControl: false,
+        mapTypeControl: false,
+        scaleControl: false,
+        draggable: false,
+        
+
+        styles: [
+            {"featureType": "administrative","elementType": "labels","stylers": [{"visibility": "on"}]},
+            {"featureType": "administrative.country","elementType": "labels","stylers": [{"visibility": "off"}]},
+            {"featureType": "administrative.province","elementType": "labels","stylers": [{"visibility": "on"}]},
+            {"featureType": "administrative.locality","elementType": "labels","stylers": [{"visibility": "on"}]},
+            {"featureType": "administrative.locality","elementType": "labels.text.fill","stylers": [{"color": "#00587d"}]},
+            {"featureType": "administrative.neighborhood","elementType": "labels","stylers": [{"visibility": "on"}]},
+            {"featureType": "poi","elementType": "all","stylers": [{"visibility": "on"}]},
+            {"featureType": "poi","elementType": "labels","stylers": [{"visibility": "off"}]},{"featureType": "road","elementType": "labels","stylers": [{"visibility": "off"}]},
+            {"featureType": "road.highway","elementType": "geometry","stylers": [{"visibility": "on"}]},
+            {"featureType": "road.highway","elementType": "geometry.fill","stylers": [{"color": "#525252"},{"lightness": "42"}]},
+            {"featureType": "road.highway","elementType": "geometry.stroke","stylers": [{"visibility": "off"},{"color": "#797979"}]},
+            {"featureType": "road.highway","elementType": "labels","stylers": [{"visibility": "off"}]},
+            {"featureType": "road.arterial","elementType": "labels","stylers": [{"visibility": "off"}]},
+            {"featureType": "transit.station","elementType": "labels","stylers": [{"visibility": "off"}]},
+            {"featureType": "water","elementType": "geometry.fill","stylers": [{"color": "#0184bc"},{"lightness": "68"}]},
+            {"featureType": "water","elementType": "labels","stylers": [{"visibility": "off"}]}]
+        });
+        }
+</script>
+
+{% endblock %}
+ 
+ 
+ 

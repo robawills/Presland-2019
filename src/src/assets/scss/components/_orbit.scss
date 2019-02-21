@@ -1,0 +1,13 @@
+.orbit-previous, .orbit-next {
+    position: relative;
+    bottom: 0;
+    z-index: 10;
+    color: #ffffff;
+}
+
+.orbit-controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: $orange;
+}

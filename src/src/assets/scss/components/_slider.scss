@@ -1,0 +1,33 @@
+.slider {
+    // background-color: rgb(150, 150, 150);
+    
+    margin: 0;
+    padding: 0;
+
+    &__img {
+        height: 18rem;
+        @include breakpoint(medium) {
+            height: 30rem;
+        }
+    }
+
+    &__controls {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 10;
+
+        .orbit-previous, .orbit-next {
+            background: $orange;
+            margin: 0;
+            transform: none;
+            padding: 0.75rem;
+            font-size: 1rem;
+            &:hover {
+                background: lighten($orange, 10%)
+            }
+        }
+    }
+}
+
+

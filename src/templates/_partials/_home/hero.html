@@ -1,0 +1,13 @@
+{% for asset in entry.homeBackgroundImage %}
+   <section class="home" style="background: url('{{ asset.url }}') fixed no-repeat center center; background-size: cover;">
+       <div class="grid-container">
+           <div class="grid-x  grid-padding-x">
+               <div class="cell  medium-12  large-8">
+                   <img class="home__logo" src="assets/img/presland-logo-white.png">
+                   <h1 class="home__text  bold">Committed to providing the highest quality of plumbing, gas & drainage services to all our clients.</h1>
+                   <button class="button  button--orange  home__button">Get a free quote</button>
+               </div>
+           </div>
+       </div>
+   </section>
+{% endfor %}

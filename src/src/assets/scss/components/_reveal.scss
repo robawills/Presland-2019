@@ -1,0 +1,58 @@
+.reveal {
+    background:white;
+    border-radius: 0.1rem;
+    border: none;
+    padding: 3rem;
+
+    button {
+        background-color: $orange;
+        color: white;
+        padding: 0.75rem 1rem;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 0.2rem;
+        transition: all 0.2s;
+        &:hover {
+            background-color: $dark-gray;
+            cursor: pointer;
+        }
+    }
+
+    .close-button {
+        background: none;
+        color: $dark-gray;
+        margin: 0;
+        padding: 0;
+        font-size: 2.25rem;
+        font-weight: 500;
+        &:hover {
+            color: $orange;
+            background: none;
+        }
+    }
+
+    [type="text"], [type="password"], [type="date"], [type="datetime"], [type="datetime-local"], [type="month"], [type="week"], [type="email"], [type="number"], [type="search"], [type="tel"], [type="time"], [type="url"], [type="color"], textarea {
+        border: none;
+        border-bottom: 0.1rem solid $medium-gray;
+        background-color: none;
+        background: none;
+        color: $dark-gray;
+        box-shadow: none;
+        min-width: 100%;
+    
+        &::placeholder {
+            color: $dark-gray;
+            opacity: 0.9; /* Firefox */
+            font-size: 0.9rem;
+        }
+    
+        &:focus {
+            background: none;
+            border: none;
+            border-bottom: 0.15rem solid $blue;
+            box-shadow: none;
+        }
+    }
+}
+

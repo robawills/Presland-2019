@@ -1,0 +1,45 @@
+.home {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+
+    &__logo {
+        width: 13rem;
+        margin-bottom: 1.5rem;
+    }
+    &__text {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+    }
+
+    &__button {
+        margin-bottom: 5rem;
+    }
+
+    @include breakpoint(medium) {
+        min-height: 45rem;
+        height: 85vh;
+
+        &__logo {
+            width: 17rem;
+        }
+        &__text {
+            font-size: 1.5rem;
+        }
+
+    }
+    @include breakpoint(large) {
+
+        &__logo {
+            width: 20rem;
+            margin-bottom: 1.75rem;
+        }
+        &__text {
+            font-size: 1.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+    }
+}

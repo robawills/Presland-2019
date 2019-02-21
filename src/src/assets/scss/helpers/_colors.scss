@@ -1,0 +1,30 @@
+.white {
+    color: white;
+}
+
+.orange {
+    color: $orange;
+}
+
+.bg-off-white {
+    background-color: $off-white;
+}
+
+.bg-orange {
+    background-color: $orange;
+}
+
+.bg-blue {
+    background-color: $blue;
+}
+
+.bg-blue-grad {
+    background: linear-gradient(45deg, #003850, #009FE3 );
+}
+
+.bg-white {
+    background-color: white;
+}
+.bg-darkgray {
+    background-color: #131313;
+}

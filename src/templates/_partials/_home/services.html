@@ -1,0 +1,23 @@
+
+{% if entry.homeServices|length %}
+
+<section class="home-services">
+    <div class="grid-container">
+        <div class="grid-x  grid-padding-x  bg-off-white  align-center">
+            {% for homeService in entry.homeServices %}
+            <article class="cell  medium-4  text-center  home-services__item">
+                {% for asset in homeService.serviceIcon %} 
+                    <img class="home-services__icon" src="{{ asset.url }}">
+                {% endfor %}
+                <h1 class="home-services__title  bold" >{{ homeService.serviceTitle }}</h1>
+                <p class="home-services__dis">{{ homeService.serviceDis }}</p>
+            </article>
+            {% endfor %}
+            <div class="cell  medium-6  medium-offset-6  home-services__button  bg-orange">
+                <button class="button  button--50  bold" data-open="getQuote">Discover what we can do for you</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endif %}

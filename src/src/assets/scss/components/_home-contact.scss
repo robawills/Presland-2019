@@ -1,0 +1,58 @@
+.home-contact {
+    color: white;
+
+    &__bg {
+        background-color: $dark-gray;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    &__title {
+        margin: 2rem 0 1.5rem;
+
+        @include breakpoint(medium) {
+            margin: 0 0 1.5rem;
+        }
+    }
+
+    &__details {
+        margin: 1rem 0 3rem;
+        font-size: 1rem;
+        @include breakpoint(medium) {
+            margin: 1rem 0;
+            font-size: 1.25rem;
+        }
+    }
+
+    &__link {
+        display: inline-block;
+        color: white;
+        transition: all 0.2s;
+        &:hover {
+            color: $orange;
+        }
+    }
+
+    &__map {
+        height: 20rem;
+        @include breakpoint(medium) {
+            height: 35rem;
+        }
+    }
+
+    button {
+        background-color: $orange;
+        color: white;
+        padding: 0.75rem 1rem;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 0.2rem;
+        transition: all 0.2s;
+        &:hover {
+            background-color: $blue;
+            cursor: pointer;
+        }
+    }
+}

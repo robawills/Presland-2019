@@ -1,0 +1,73 @@
+{#
+ # Contact template
+ # ---------------
+ #
+ #}
+
+ {% extends "_layouts/base" %}
+
+ {% block content %}
+
+
+ {% include '_partials/_shared/single-head' %}
+
+<section class="rates  grid-container">
+    <div class="grid-x  grid-padding-x">
+        <div class="cell small-12">
+            {% if entry.generalRates|length %}
+            <table class="rates__table  text-left stack">
+                <tbody class="rates__tbody">
+                    <tr class="rates__tr  show-for-medium">
+                        <th class="regular">Charge per hour then 30 min slots there after</th>
+                        <th><h3>Normal Hours</h3><small>(7am – 8pm Monday - Friday)</small></th>
+                        <th><h3>Out of hours</h3> <small>(8pm-7am Monday - Friday, all day weekends and bank holidays)</small></th>
+                    </tr>
+
+                    {% for row in entry.generalRates %}
+                    <tr class="rates__tr">
+                        <td>{{ row.serviceRate }}</td>
+                        <td class="rates__td"><span class="show-for-small-only">Normal Hours:</span> {{ row.normalHoursRate }}</td>
+                        <td class="rates__td"><span class="show-for-small-only">Out of hours:</span> {{ row.outOfHoursRate }}</td>
+                    </tr>
+                    {% endfor %}
+
+                    <tr class="rates__tr">
+                        <td class="show-for-medium"></td>
+                        <td class="show-for-medium"></td>
+                        <td><span class="rates__small">All rates subject to VAT</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+        {% if entry.systemPowerflushing|length %}
+        <div class="cell small-12  medium-8">
+            <h3 class="bold">System Powerflushing</h3>
+            <p>(Including approved chemicals)</p>
+            <table class="rates__table  rates__table--bottom  text-left">
+                <tbody class="rates__tbody">
+
+                    {% for row in entry.systemPowerflushing %}
+                    <tr class="rates__tr">
+                        <td >{{ row.numberOfRadiators }}</td>
+                        <td class="rates__td">{{ row.price }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr class="rates__tr">
+                        <td><span class="rates__small">All rates subject to VAT</span></td>
+                        <td></td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+
+
+{% endblock %}
+ 
+ 
+ 

@@ -1,0 +1,30 @@
+{#
+ # About template
+ # ---------------
+ #
+ #}
+
+ {% extends "_layouts/base" %}
+
+ {% block content %}
+
+<div class="bg-off-white">
+
+    {% include '_partials/_shared/single-head' %}
+
+    {% include '_partials/_about/splitgallery' %}
+ 
+</div>
+
+<section class="grid-container  reviews">
+    
+    {% include '_partials/_about/splitbox' %}
+
+    {% include '_partials/_about/reviews' %}
+
+</section>
+
+
+ {% endblock %}
+ 
+ 

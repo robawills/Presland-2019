@@ -1,0 +1,21 @@
+.contact {
+    &__map {
+        height: 30rem;
+        margin-bottom: 5rem;
+    }
+
+    button {
+        background-color: $dark-gray;
+        color: white;
+        padding: 0.75rem 1rem;
+        margin: 1rem 0;
+        font-size: 0.9rem;
+        font-weight: 500;
+        border-radius: 0.2rem;
+        transition: all 0.2s;
+        &:hover {
+            background-color: $orange;
+            cursor: pointer;
+        }
+    }
+}

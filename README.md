@@ -1,2 +1,7 @@
-# Presland-2019
-Presland - Foundation craft site
+# Craft 3 in Docker
+
+`docker-compose up`
+
+[http://localhost/admin](http://localhost/admin)
+
+To compile files run `foundation watch` in `src`

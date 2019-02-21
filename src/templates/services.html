@@ -1,0 +1,96 @@
+{#
+ # Services template
+ # ---------------
+ #}
+
+ {% extends "_layouts/base" %}
+
+ {% block content %}
+
+ {% include '_partials/_shared/single-head' %}
+
+ 
+ <section class="services  grid-container">
+    {% if entry.services|length %}   
+    <ul class="accordion" data-accordion  data-accordion data-allow-all-closed="true">
+        {% for service in entry.services %}
+            
+            <li class="accordion-item  services__item" data-accordion-item>
+                
+                {% for asset in service.serviceBgImg %} 
+                <a href="#" class="accordion-title  services__title" style="background: url('{{ asset.url }}') no-repeat center center; background-size: cover;">
+                
+                    <div class="grid-x  align-middle">
+                        {% if service.serviceIcon|length %}
+                        <div class="cell  small-3  medium-2">
+                            {% for asset in service.serviceIcon %}
+                            <img class="services__icon" src="{{ asset.url }}" alt="{{ service.serviceTitle }}">
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <article class="cell  small-9  medium-8">
+                            <h1 class="bold">{{ service.serviceTitle }}</h1>
+                            <p class="hide-for-small-only">{{ service.serviceDescription }}</p>
+                        
+                        </article>
+                    </div>
+                </a>
+                {% endfor %}
+
+                <div class="accordion-content  services__content  bg-off-white" data-tab-content>
+                    <div class="grid-x  grid-padding-x">
+                        {% if service.serviceList|length %}
+                        <div class="cell  small-12  medium-6  services__border-r">
+                            <h3 class="medium  services__h3">Services</h3>
+                            <ul class="services__ul">
+                                {% for row in service.serviceList %}
+                                <li>{{ row.serviceListItem }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                        {% if service.serviceRates|length %}
+                        <div class="cell  small-12  medium-6">
+                            <h3 class="medium  services__h3">Rates</h3>
+                            
+                            <table>
+                                <tr>
+                                    <th>Hours</th>
+                                    <th>Normal Hours</th>
+                                    <th>Out of hours</th>
+                                </tr>
+                                {% for row in service.serviceRates %}
+                                <tr>
+                                    <td>{{ row.hours }}</td>
+                                    <td>{{ row.normalHours }}</td>
+                                    <td>{{ row.outIfHours }}</td>
+                                </tr>
+                                {% endfor %}
+                            </table>
+
+                            <p>Charge per hour then 30 min slots there after</p>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="cell  medium-6  medium-offset-6  bg-orange  services__buttom">
+                            <button data-open="getQuote" class="button  button--50  bold">Get your free quote</button>
+                        </div>
+                       
+                    </div>
+                </div>
+
+            </li>
+            
+        {% endfor %}
+
+    </ul>
+        
+    {% endif %}
+    
+                
+</section>
+ 
+
+ {% endblock %}
+ 
+ 

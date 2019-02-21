@@ -1,0 +1,140 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    &__bg {
+        padding: 0.75rem 0;
+        transition: all 0.5s;
+        
+        &--white {
+            background-color: white;
+        }
+    }
+
+    &__logo {
+        width: 2.25rem;
+        opacity: 0;
+        transition: all 1s;
+
+        &--m {
+            margin: 0.75rem 0;
+        }
+    }
+
+    &__li {
+        color: white;
+        font-weight: 500;
+        position: relative;
+
+        &--mobile {
+            font-size: 1.5rem;
+        }
+
+        @include breakpoint(medium) {
+            font-size: 0.9rem;
+        }
+        @include breakpoint(large) {
+            font-size: 1rem;
+        }
+
+        &:focus {
+            color: white;
+        }
+
+        &:hover {
+            color: white;
+            &::after { transform: scaleX(1); }
+        }
+
+        &:after {
+            display:block;
+            content: '';
+            border-bottom: solid 2px $orange;  
+            transform: scaleX(0);  
+            transition: transform 250ms ease-in-out;
+            padding-top:0.5rem;
+        }
+
+        &--active:after {
+            display:block;
+            content: '';
+            border-bottom: solid 2px $orange;  
+            transform: scaleX(1);  
+            padding-top:0.5rem;
+        }
+
+    }
+
+
+    &--light {
+        .header__logo {
+            opacity: 1;
+        }
+    }
+
+    &--dark {
+        .header__bg {
+            background-color: none;
+        }
+        .header__logo {
+            opacity: 1;
+        }
+        .header__li {
+            color: $dark-gray;
+            &:hover {
+                color: $dark-gray;
+            }
+
+            &--mobile {
+                color: white;
+            }
+        }
+
+        .button__outline {
+            border: 0.1rem solid $dark-gray;
+            color: $dark-gray;
+            &:hover {
+                color: $dark-gray;
+            }
+        }
+
+        .hamburger .line {
+            background-color: $dark-gray;
+        }
+    }
+
+    &__m {
+        margin: 0 1.5rem;
+    }
+}
+
+
+.menu a, .menu .button {
+    margin: 0.5rem 1rem;
+    padding: 0.5rem 0;
+
+    @include breakpoint(medium) {
+        margin: 0 0.5rem;
+    }
+    @include breakpoint(large) {
+        margin: 0 1rem;
+    }
+}
+
+
+.header__logo--show {
+    opacity: 1;
+}
+
+
+.header__li--dark {
+    color: $dark-gray;
+}
+
+.header__li--dark:hover {
+    color: $dark-gray;
+}
+

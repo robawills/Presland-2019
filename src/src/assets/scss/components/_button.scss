@@ -1,0 +1,74 @@
+.button {
+
+    background-color: $orange;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+    font-weight: 500;
+
+    &--50 {
+        width: 100%;
+        margin: 0;
+        text-align: left;
+        padding: 1.5rem 0;
+        &:focus {
+            background: none;
+        }
+    }
+
+    
+
+    &:hover {
+        background-color: $orange;
+        color: $dark-gray;
+    }
+
+    &__outline {
+        border: 0.1rem solid white;
+        margin: 0;
+        padding: 0.8rem 1rem;
+        background: none;
+        color: white;
+        border-radius: 1.5rem;
+        transition: all 0.5s;
+
+        @include breakpoint(medium) {
+            font-size: 0.7rem;
+        }
+
+        @include breakpoint(large) {
+            font-size: 0.8rem;
+        }
+
+        &:hover {
+            border: 0.1rem solid $orange;
+            background:none;
+            color: white;
+        }
+        &:focus {
+            background: none;
+            color: white;
+        }
+
+        &--dark {
+            border: 0.1rem solid $dark-gray;
+            color: $dark-gray;
+            &:hover {
+                color: $dark-gray;
+            }
+            &:focus {
+                color: $dark-gray;
+            }
+        }
+    }
+
+    &--phone {
+        position: fixed;
+        bottom: 0rem;
+        right: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+        padding: 0.5rem;
+    }
+
+}
