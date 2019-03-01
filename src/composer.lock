@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5732853a5b204f0e9e0b6ca14a442371",
+    "content-hash": "6d8f3b72ebd164288b98dc0d77b3bf45",
     "packages": [
         {
             "name": "barrelstrength/sprout-base",
@@ -48,22 +48,170 @@
             "time": "2019-02-14T00:01:45+00:00"
         },
         {
-            "name": "barrelstrength/sprout-forms",
-            "version": "3.0.0-beta.34",
+            "name": "barrelstrength/sprout-base-email",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/barrelstrength/craft-sprout-forms.git",
-                "reference": "84f7c8b52372c842e5e36010c9d326872fdb4239"
+                "url": "https://github.com/barrelstrength/craft-sprout-base-email.git",
+                "reference": "ec4aeb78350c649b9f83bd9700e6a332a629d7f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barrelstrength/craft-sprout-forms/zipball/84f7c8b52372c842e5e36010c9d326872fdb4239",
-                "reference": "84f7c8b52372c842e5e36010c9d326872fdb4239",
+                "url": "https://api.github.com/repos/barrelstrength/craft-sprout-base-email/zipball/ec4aeb78350c649b9f83bd9700e6a332a629d7f4",
+                "reference": "ec4aeb78350c649b9f83bd9700e6a332a629d7f4",
                 "shasum": ""
             },
             "require": {
-                "barrelstrength/sprout-base": "^4.0.3",
-                "craftcms/cms": "^3.0.0"
+                "craftcms/cms": "^3.1.0"
+            },
+            "type": "yii-module",
+            "autoload": {
+                "psr-4": {
+                    "barrelstrength\\sproutbaseemail\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Barrel Strength",
+                    "homepage": "https://www.barrelstrengthdesign.com/"
+                }
+            ],
+            "description": "Common email libraries for Sprout Plugins for Craft CMS",
+            "time": "2019-02-18T23:14:18+00:00"
+        },
+        {
+            "name": "barrelstrength/sprout-base-fields",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barrelstrength/craft-sprout-base-fields.git",
+                "reference": "94fd01110b5c5508a5dca20d722514cc577941c0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barrelstrength/craft-sprout-base-fields/zipball/94fd01110b5c5508a5dca20d722514cc577941c0",
+                "reference": "94fd01110b5c5508a5dca20d722514cc577941c0",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.0"
+            },
+            "type": "yii-module",
+            "autoload": {
+                "psr-4": {
+                    "barrelstrength\\sproutbasefields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Barrel Strength",
+                    "homepage": "https://www.barrelstrengthdesign.com/"
+                }
+            ],
+            "description": "Common fields libraries for Sprout Plugins for Craft CMS",
+            "time": "2019-02-26T23:30:16+00:00"
+        },
+        {
+            "name": "barrelstrength/sprout-base-import",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barrelstrength/craft-sprout-base-import.git",
+                "reference": "cf1a96081bea231433968d0b60989b0d2b1828ac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barrelstrength/craft-sprout-base-import/zipball/cf1a96081bea231433968d0b60989b0d2b1828ac",
+                "reference": "cf1a96081bea231433968d0b60989b0d2b1828ac",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.0"
+            },
+            "type": "yii-module",
+            "autoload": {
+                "psr-4": {
+                    "barrelstrength\\sproutbaseimport\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Barrel Strength",
+                    "homepage": "https://www.barrelstrengthdesign.com/"
+                }
+            ],
+            "description": "Common import libraries for Sprout Plugins for Craft CMS",
+            "time": "2019-02-13T23:53:54+00:00"
+        },
+        {
+            "name": "barrelstrength/sprout-base-reports",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barrelstrength/craft-sprout-base-reports.git",
+                "reference": "9bd428349a19d39d696c36cf3755fd5b36fb58b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barrelstrength/craft-sprout-base-reports/zipball/9bd428349a19d39d696c36cf3755fd5b36fb58b4",
+                "reference": "9bd428349a19d39d696c36cf3755fd5b36fb58b4",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.0"
+            },
+            "type": "yii-module",
+            "autoload": {
+                "psr-4": {
+                    "barrelstrength\\sproutbasereports\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Barrel Strength",
+                    "homepage": "https://www.barrelstrengthdesign.com/"
+                }
+            ],
+            "description": "Common reports libraries for Sprout Plugins for Craft CMS",
+            "time": "2019-02-13T23:55:12+00:00"
+        },
+        {
+            "name": "barrelstrength/sprout-forms",
+            "version": "3.0.0-beta.45",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barrelstrength/craft-sprout-forms.git",
+                "reference": "474a8f621d8f8a65e64a22771fefa148f5d1f614"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barrelstrength/craft-sprout-forms/zipball/474a8f621d8f8a65e64a22771fefa148f5d1f614",
+                "reference": "474a8f621d8f8a65e64a22771fefa148f5d1f614",
+                "shasum": ""
+            },
+            "require": {
+                "barrelstrength/sprout-base": "^4.0.6",
+                "barrelstrength/sprout-base-email": "^1.0.1",
+                "barrelstrength/sprout-base-fields": "^1.0.1",
+                "barrelstrength/sprout-base-import": "^1.0.0",
+                "barrelstrength/sprout-base-reports": "^1.0.0",
+                "craftcms/cms": "^3.1.15"
             },
             "type": "craft-plugin",
             "extra": {
@@ -99,7 +247,7 @@
                 "craftcms",
                 "sprout forms"
             ],
-            "time": "2018-11-28T17:20:00+00:00"
+            "time": "2019-02-26T23:36:49+00:00"
         },
         {
             "name": "cebe/markdown",
